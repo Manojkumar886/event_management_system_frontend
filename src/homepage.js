@@ -13,7 +13,13 @@ export const Homepage = () => {
                             <Nav.Link href="/listall">ListallEventdetails</Nav.Link>
                         </Nav>
                         <div>
-                            <button className="btn btn-outline-dark text-light fst-italic">LOGOUT</button>
+                            <button className="btn btn-outline-dark text-light fst-italic"
+                                onClick={
+                                    () => {
+                                        sessionStorage.removeItem("auth");
+                                        window.location.assign("/");
+                                    }
+                                }>LOGOUT</button>
                         </div>
                     </Navbar.Collapse>
                 </Container>
