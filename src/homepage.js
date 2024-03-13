@@ -9,7 +9,7 @@ export const Homepage = () => {
                     <Navbar.Toggle />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto">
-                            <Nav.Link href="/Register">RegisternewEvent</Nav.Link>
+                            <Nav.Link href="/registerpage">RegisternewEvent</Nav.Link>
                             <Nav.Link href="/listall">ListallEventdetails</Nav.Link>
                         </Nav>
                         <div>

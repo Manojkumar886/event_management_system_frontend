@@ -22,6 +22,15 @@ export const Loginperformance = async (object) => {
     catch (err) {
         alert(err);
     }
+}
 
+
+export const Createvalues = async (object) => {
+    const temp = await axios.post(`http://localhost:8080/eventmanagement/create`, object, {
+        headers: {
+            "Authorization": `Basic ${sessionStorage.getItem("auth")}`
+        }
+    });
+    return temp;
 }
 
