@@ -1,8 +1,11 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { useState } from 'react'
 import { Createvalues } from './connect'
+import { useNavigate } from 'react-router'
 
 export const EventForm = () => {
+    const navi = useNavigate();
+
     const [eventdetails, setEventdetails] = useState({
         "eventNumber": 0,
         "eventName": "",
@@ -26,7 +29,9 @@ export const EventForm = () => {
 
     const register = async () => {
         await Createvalues(eventdetails);
-        alert("successed");
+        alert(" added successfully");
+        navi("/listall");
+
     }
     return (
         <>

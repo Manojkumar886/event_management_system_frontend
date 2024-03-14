@@ -34,3 +34,24 @@ export const Createvalues = async (object) => {
     return temp;
 }
 
+
+export const Listvalues = async () => {
+    const temp = await axios.get(`http://localhost:8080/eventmanagement/`,
+        {
+            headers: {
+                "Authorization": `Basic ${sessionStorage.getItem("auth")}`
+            }
+        });
+
+    return temp;
+}
+
+export const readonevalue = async (id) => {
+    const temp = await axios.get(`http://localhost:8080/eventmanagement/readonly/${id}`, {
+        headers: {
+            "Authorization": `Basic ${sessionStorage.getItem("auth")}`
+        }
+    });
+
+    return temp;
+}
