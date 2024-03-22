@@ -1,7 +1,7 @@
 
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { useEffect, useState } from 'react';
-import { Listvalues } from './connect';
+import { Listvalues, deleteonevalue } from './connect';
 import { useNavigate } from 'react-router';
 
 export const Listpage = () => {
@@ -51,8 +51,16 @@ export const Listpage = () => {
                                                 <button className='btn btn-outline-secondary'>
                                                     <a href={`readpage/${event.eventNumber}`}>READ</a>
                                                 </button>
-                                                <button className='btn btn-outline-warning'>UPDATE</button>
-                                                <button className='btn btn-outline-danger'>DELETE</button>
+                                                <button className='btn btn-outline-warning'
+                                                ><a href={`updatepage/${event.eventNumber}`}>UPDATE</a>
+                                                </button>
+                                                <button className='btn btn-outline-danger'
+                                                    onClick={
+                                                        async () => {
+                                                            const t = await deleteonevalue(event.eventNumber);
+                                                            navi("/listall")
+                                                        }
+                                                    }>DELETE</button>
 
                                             </td>
                                         </tr>

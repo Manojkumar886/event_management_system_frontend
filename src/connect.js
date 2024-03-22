@@ -55,3 +55,24 @@ export const readonevalue = async (id) => {
 
     return temp;
 }
+
+
+export const updatevalues = async (object) => {
+    const t = await axios.put(`http://localhost:8080/eventmanagement/update`, object,
+        {
+            headers: {
+                "Authorization": `Basic ${sessionStorage.getItem("auth")}`
+            }
+        })
+}
+
+
+export const deleteonevalue = async (id) => {
+    const t = await axios.delete(`http://localhost:8080/eventmanagement/delete/${id}`,
+        {
+            headers: {
+                "Authorization": `Basic ${sessionStorage.getItem("auth")}`
+            }
+        })
+    return t;
+}
